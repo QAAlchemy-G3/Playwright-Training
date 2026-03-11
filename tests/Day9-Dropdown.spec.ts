@@ -1,5 +1,4 @@
 
-
 import{test} from "@playwright/test"
 test('Test to verify drop down',async({page})=>{
 
@@ -9,7 +8,7 @@ test('Test to verify drop down',async({page})=>{
     //Get the count and print of all the values
     const dropdown =page.locator(`//select[@class="ui-selectonemenu"]/option`)
     const dropdowncount = await dropdown.count()
-    for (let index=0; index<dropdowncount; index++)
+    for (let index=1; index<dropdowncount; index++)
     {
         console.log(await dropdown.nth(index).innerText())
     }
@@ -18,14 +17,13 @@ test('Test to verify drop down',async({page})=>{
     await page.locator('//li [text()="Brazil"]').click()
     await page.waitForTimeout(2000)
     //Confirm Cities belongs to Country is loaded
-    const city =page.locator('[id$="city"]')
-    const citylist = await city.count()
-    for (let index=0; index<dropdowncount; index++)
-    {
-        console.log("List of cities is",await dropdown.nth(index).innerText())
+    const city = page.locator('[id$="city_input"] option')
+    const count = await city.count()
+    for (let i = 1; i < count; i++) {
+    console.log(await city.nth(i).innerText())
     }
-    city.click()
-    await page.locator('//li[text()="Salvador"]').click()
+    await page.locator(`[id$="city"]`).click()
+    await page.locator('//li [text()="Salvador"]').click()
     //Choose any three courses from the dropdown
     await page.getByRole("button",{name:"Show Options"}).click()
     await page.locator('li.ui-autocomplete-item', { hasText: "AWS" }).click()

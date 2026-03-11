@@ -2,7 +2,7 @@
 
 function launchBrowser(browserName)
 {
-    if(browserName="Chrome")
+    if(browserName==="Chrome")
     {
         console.log("Its a Chrome Browser")
     }
@@ -11,27 +11,19 @@ function launchBrowser(browserName)
         console.log("Its not a Chrome Browser")
     }
 }
-function runTests()
+function runTests(input)
 {
     switch(input)
     {
-        case input===Sanity:
-            {
-            console.log("It's Sanity testing")  
-            break
-            }
-        case input===Regression:
-            {
-            console.log("It's Regression testing")  
-            break
-            }
+        case "Sanity":
+        console.log("It's Sanity testing")  
+        break
+        case "Regression":
+        console.log("It's Regression testing")  
+        break
         default:
-            {
-            console.log("It's Smoke testing")  
-            }
-
-
+        console.log("It's Smoke testing")  
     }
 }
-launchBrowser(Chrome)
-runTests(Smoke)
+launchBrowser("Chrome")
+runTests("Smoke")
