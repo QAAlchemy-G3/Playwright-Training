@@ -1,0 +1,12 @@
+{
+    "tcid":"Testcase1",
+    "CompanyName":"Emriates NBD",
+    "FirstName":"Lionel",
+    "LastName":"Messi",
+    "Source":"LEAD_DIRECTMAIL",
+    "MarketingCampaign":"DEMO_MKTG_CAMP",
+    "Indursty":"IND_GEN_SERVICES",
+    "Currency":"INR",
+    "Country":"IND",
+    "State":"IN-AS"
+}
